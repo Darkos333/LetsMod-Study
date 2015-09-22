@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "letsmodstudy",
+  "name": "Lets Mod Study",
+  "description": "My first training mod for learning Minecraft modding from Pahimar's Let's Mod Reboot",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Darkos333"],
+  "credits": "Pahimar, for making this tutorial",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
