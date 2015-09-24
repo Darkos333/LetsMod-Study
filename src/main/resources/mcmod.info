@@ -5,7 +5,7 @@
   "description": "My first training mod for learning Minecraft modding from Pahimar's Let's Mod Reboot",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/Darkos333/LetsModStudy",
   "updateUrl": "",
   "authorList": ["Darkos333"],
   "credits": "Pahimar, for making this tutorial",
