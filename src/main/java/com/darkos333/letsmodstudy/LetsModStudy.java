@@ -1,18 +1,21 @@
 package com.darkos333.letsmodstudy;
 
+import com.darkos333.letsmodstudy.reference.Reference;
+import com.darkos333.letsmodstudy.proxy.*;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 
-@Mod(modid = LetsModStudy.MODID, name = LetsModStudy.NAME, version = LetsModStudy.VERSION)
+@Mod(modid = Reference.ModID, name = Reference.ModName, version = Reference.Version)
 public class LetsModStudy
 {
-    public static final String MODID = "letsmodstudy";
-    public static final String VERSION = "1.7.10-1.0";
-    public static final String NAME = "Lets Mod Study";
-    
-    @Mod.Instance(LetsModStudy.MODID)
+    @Mod.Instance(Reference.ModID)
     public static LetsModStudy instance;
+    
+    @SidedProxy(clientSide = Reference.ClientProxyClass , serverSide = Reference.ServerProxyClass)
+    public static IProxy proxy;
     
     @EventHandler
     public void preinit(FMLPreInitializationEvent event)
