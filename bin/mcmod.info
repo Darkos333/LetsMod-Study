@@ -1,14 +1,14 @@
 [
 {
-  "modid": "letsmodstudy",
+  "modid": "LeMoSt",
   "name": "Lets Mod Study",
-  "description": "My first training mod for learning Minecraft modding from Pahimar's Let's Mod Reboot",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "https://github.com/Darkos333/LetsModStudy",
+  "description": "Advanced solar panels is new generation of using solar power. This is addon for IndustrialCraft 2",
+  "version": "1.7.10-1.0",
+  "mcversion": "1.7.10",
+  "url": "http://forum.industrial-craft.net/index.php?page=Thread&threadID=3291",
   "updateUrl": "",
-  "authorList": ["Darkos333"],
-  "credits": "Pahimar, for making this tutorial",
+  "authorList": ["SeNtiMeL, Icedfire"],
+  "credits": "Created by SeNtiMeL, based on original mod of Icedfire. Textures by Krezzard. Thanks mak326428 for help with develop.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

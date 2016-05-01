@@ -1,0 +1,34 @@
+package com.darkos333.letsmodstudy.configuration;
+
+import java.io.File;
+
+import cpw.mods.fml.common.event.*;
+import net.minecraftforge.common.config.*;
+
+public class ConfigurationHandler
+{
+	private static int testConfigVal = 0;
+	
+	public static void loadConfig(FMLPreInitializationEvent event)
+	{
+		File configFile = event.getSuggestedConfigurationFile();
+		Configuration configuration = new Configuration(configFile);
+		try
+		{
+			configuration.load();
+			
+			testConfigVal = configuration.get(Configuration.CATEGORY_GENERAL, "testConfigVal", 1, "This is an example config value").getInt();
+			
+			
+		}
+		catch(Exception e)
+		{
+			
+		}
+		finally
+		{
+			configuration.save();
+		}
+	}
+
+}

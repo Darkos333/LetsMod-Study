@@ -1,7 +1,5 @@
 package com.darkos333.letsmodstudy.utility;
 
-import com.darkos333.letsmodstudy.reference.Reference;
-
 import cpw.mods.fml.common.FMLLog;
 
 import org.apache.logging.log4j.Level;
@@ -10,7 +8,7 @@ public class LogHelper
 {
 	public static void log(Level logLevel, Object object)
 	{
-		FMLLog.log(Reference.ModName, logLevel, String.valueOf(object));
+		FMLLog.log(logLevel, String.valueOf(object));
 	}
 	
 	public static void all(Object object) { log(Level.ALL, object); }
