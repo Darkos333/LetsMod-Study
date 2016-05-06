@@ -2,13 +2,13 @@
 {
   "modid": "LeMoSt",
   "name": "Lets Mod Study",
-  "description": "Advanced solar panels is new generation of using solar power. This is addon for IndustrialCraft 2",
+  "description": "This is just a training mod, made solely for developing my own skills in creating MC mods. It mostly follows Pahimar's Lets Mod Reboot tutorial, however it also contains a handful of others and my own code. I decided to go more indepth during this mod development, exploring the capabilities of Forge. Feel free to use this mod and its sources in any way you want :)",
   "version": "1.7.10-1.0",
   "mcversion": "1.7.10",
-  "url": "http://forum.industrial-craft.net/index.php?page=Thread&threadID=3291",
+  "url": "",
   "updateUrl": "",
-  "authorList": ["SeNtiMeL, Icedfire"],
-  "credits": "Created by SeNtiMeL, based on original mod of Icedfire. Textures by Krezzard. Thanks mak326428 for help with develop.",
+  "authorList": ["Darkos333"],
+  "credits": "All credits go to awesome MC modding community.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -1,0 +1,3 @@
+configgui.test_category.name=Test category
+configgui.test_category.testConfigValue1.name=Test config value #1
+configgui.test_category.testConfigValue2.name=Test config value #2

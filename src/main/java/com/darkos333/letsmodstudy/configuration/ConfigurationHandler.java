@@ -36,7 +36,7 @@ public class ConfigurationHandler
 				configuration.load();
 				if(success)
 				{
-					reloadConfig();
+					saveRecreatedConfig();
 					configuration.save();
 					LogHelper.warn("Config successfully updated.");
 					configuration = new Configuration(configFile);
@@ -68,12 +68,12 @@ public class ConfigurationHandler
 	
 	private static void loadConfig()
 	{
-		configuration.setCategoryLanguageKey("test_category","Test Category");
+		//configuration.setCategoryLanguageKey("test_category","Test Category");
 		testConfigValue1 = configuration.get("test_category", "testConfigValue1", Config.testConfigValue1, "This is an example config value").getInt();
 		testConfigValue2 = configuration.get("test_category", "testConfigValue2", Config.testConfigValue2, "This is an example config value").getInt();
 	}
 	
-	private static void reloadConfig()
+	private static void saveRecreatedConfig()
 	{
 		testConfigValue1 = configuration.get("test_category", "testConfigValue1", testConfigValue1, "This is an example config value").getInt();
 		testConfigValue2 = configuration.get("test_category", "testConfigValue2", testConfigValue2, "This is an example config value").getInt();
