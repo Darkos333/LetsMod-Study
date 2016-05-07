@@ -3,7 +3,7 @@
   "modid": "LeMoSt",
   "name": "Lets Mod Study",
   "description": "This is just a training mod, made solely for developing my own skills in creating MC mods. It mostly follows Pahimar's Lets Mod Reboot tutorial, however it also contains a handful of others and my own code. I decided to go more indepth during this mod development, exploring the capabilities of Forge. Feel free to use this mod and its sources in any way you want :)",
-  "version": "1.7.10-1.0",
+  "version": "1.7.10-0.1",
   "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",
