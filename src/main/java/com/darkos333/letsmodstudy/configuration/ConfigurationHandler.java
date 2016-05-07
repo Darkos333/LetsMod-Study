@@ -13,14 +13,17 @@ import net.minecraftforge.common.config.*;
 
 public class ConfigurationHandler
 {
-	private static Configuration configuration;
-	private static int configVersion = Config.configVersion;
+	protected static File configFile = null;
+	protected static Configuration configuration;
+	
+	protected static int configVersion = Config.configVersion;
+	
 	protected static int testConfigValue1 = Config.testConfigValue1;
 	protected static int testConfigValue2 = Config.testConfigValue2;
 	
 	public static void init(FMLPreInitializationEvent event)
 	{
-		File configFile = event.getSuggestedConfigurationFile();
+		configFile = event.getSuggestedConfigurationFile();
 		configuration = new Configuration(configFile);
 		try
 		{
@@ -28,28 +31,7 @@ public class ConfigurationHandler
 			configVersion = configuration.get("config_versioning", "ConfigVersion", Config.configVersion, "DO NOT MODIFY THIS").getInt();
 			if(configVersion != Config.configVersion)
 			{
-				LogHelper.warn("Newest config version and current confing version differs. Attempting config update.");
-				boolean success = OldConfigLoader.load(configuration, configVersion);
-				configuration.save();
-				configFile.delete();
-				configuration = new Configuration(configFile);
-				configuration.load();
-				if(success)
-				{
-					saveRecreatedConfig();
-					configuration.save();
-					LogHelper.warn("Config successfully updated.");
-					configuration = new Configuration(configFile);
-					configuration.load();
-					loadConfig();
-					
-				}
-				else
-				{
-					loadConfig();
-					LogHelper.warn("Config update failed. Forcing new default config.");
-				}
-				
+				OldConfigsLoader.load();
 			}
 			else
 			{
@@ -62,18 +44,18 @@ public class ConfigurationHandler
 		}
 		finally
 		{
-			if(configuration.hasChanged())	configuration.save();
+			if(configuration.hasChanged())
+				configuration.save();
 		}
 	}
 	
-	private static void loadConfig()
+	protected static void loadConfig()
 	{
-		//configuration.setCategoryLanguageKey("test_category","Test Category");
 		testConfigValue1 = configuration.get("test_category", "testConfigValue1", Config.testConfigValue1, "This is an example config value").getInt();
 		testConfigValue2 = configuration.get("test_category", "testConfigValue2", Config.testConfigValue2, "This is an example config value").getInt();
 	}
 	
-	private static void saveRecreatedConfig()
+	protected static void saveRecreatedConfig()
 	{
 		testConfigValue1 = configuration.get("test_category", "testConfigValue1", testConfigValue1, "This is an example config value").getInt();
 		testConfigValue2 = configuration.get("test_category", "testConfigValue2", testConfigValue2, "This is an example config value").getInt();
@@ -105,8 +87,10 @@ public class ConfigurationHandler
 			if(configuration.hasChanged())
 			{
 				configuration.save();
-				if(event.isWorldRunning)	applyConfigFromGUIRuntime();
-				else						applyConfigFromGUI();
+				if(event.isWorldRunning)
+					applyConfigFromGUIRuntime();
+				else
+					applyConfigFromGUI();
 			}
 		}
 	}
