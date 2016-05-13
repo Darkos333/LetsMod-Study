@@ -5,11 +5,13 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import net.minecraftforge.common.MinecraftForge;
 
 import com.darkos333.letsmodstudy.reference.Reference;
 import com.darkos333.letsmodstudy.proxy.*;
 import com.darkos333.letsmodstudy.utility.LogHelper;
 import com.darkos333.letsmodstudy.configuration.ConfigurationHandler;
+import com.darkos333.letsmodstudy.potions.BrewingStandHandler;
 
 @Mod(modid = Reference.ModID, name = Reference.ModName, version = Reference.Version, guiFactory = Reference.GuiFactoryClass)
 public class LetsModStudy
@@ -25,6 +27,7 @@ public class LetsModStudy
     {
     	ConfigurationHandler.init(event);
     	FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+        MinecraftForge.EVENT_BUS.register(new BrewingStandHandler());
     	LogHelper.info("Configuration succesfully loaded.");
     	ConfigurationHandler.applyConfig();
     	LogHelper.info("Configuration succesfully applied.");
