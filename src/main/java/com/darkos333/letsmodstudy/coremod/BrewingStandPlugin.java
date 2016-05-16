@@ -12,7 +12,7 @@ public class BrewingStandPlugin implements IFMLLoadingPlugin
 	@Override
 	public String[] getASMTransformerClass()
 	{
-		return new String[] {"com.darkos333.letsmodstudy.coremod.ClassTransofrmer_TileEntityBrewingStand"};
+		return new String[] {"com.darkos333.letsmodstudy.coremod.ClassTransformer"};
 	}
 
 	@Override
